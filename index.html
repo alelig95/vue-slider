@@ -13,19 +13,16 @@
           <div class="container">
               <div class="slider-wrapper">
                   <div class="prev">
-                      <i class="fas fa-angle-left"></i>
+                    <i class="fas fa-angle-left" @click="prev"></i>
                   </div>
                   <div class="images">
-                    <img class="active first" :src={{images[imagesIndex]}} alt="">
+                    <img class="active first" :src=images[imagesIndex] alt="">
                   </div>
                   <div class="next">
                     <i class="fas fa-angle-right" @click="next"></i>
                   </div>
                   <div class="nav">
-                      <i class="fas fa-circle active first"></i>
-                      <i class="fas fa-circle"></i>
-                      <i class="fas fa-circle"></i>
-                      <i class="fas fa-circle last"></i>
+                    <i v-for="(circle, index) in images" class="fas fa-circle active first" > </i>
                   </div>
               </div>
           </div>

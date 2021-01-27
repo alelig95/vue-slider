@@ -13,9 +13,18 @@ new Vue({
   methods: {
     next: function() {
         this.imagesIndex += 1;
+        if (this.imagesIndex >= this.images.length) {
+          this.imagesIndex = 0;
+        }
     },
     prev: function() {
         this.imagesIndex -= 1;
+        if (this.imagesIndex < 0) {
+          this.imagesIndex = this.images.length - 1;
+        }
+    },
+    circleActive : function () {
+
     }
   }
  });
