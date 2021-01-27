@@ -7,7 +7,7 @@ new Vue({
       'https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg',
       'https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg'
     ],
-    imagesIndex: 0
+    imagesIndex: 0,
   },
 
   methods: {
@@ -23,8 +23,15 @@ new Vue({
           this.imagesIndex = this.images.length - 1;
         }
     },
-    circleActive : function () {
-
+    isActive: function(i) {
+      if (i === this.imagesIndex) {
+        return 'fas fa-circle active'
+      } else {
+        return 'fas fa-circle'
+      }
+    },
+    changePic:function(i) {
+      this.imagesIndex = i
     }
   }
  });
